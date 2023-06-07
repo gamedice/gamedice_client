@@ -1,5 +1,11 @@
 <script>
   import {
+    Footer,
+    FooterBrand,
+    FooterLinkGroup,
+    FooterLink,
+    FooterCopyright,
+    FooterIcon,
     Navbar,
     NavBrand,
     NavLi,
@@ -9,19 +15,14 @@
     Dropdown,
     DropdownItem,
     DropdownHeader,
-    FooterBrand,
-    FooterIcon,
     DropdownDivider,
     Chevron,
-    Footer,
-    FooterCopyright,
-    FooterLinkGroup,
-    FooterLink,
     DarkMode,
   } from 'flowbite-svelte'
-  import Logo from '../assets/Logo.svg'
   import '../app.postcss'
+  import Logo from '../assets/Logo.svg'
 </script>
+
 
 <main class="wrapper">
   <div class="top">
@@ -58,6 +59,7 @@
     </Dropdown>
   </NavUl>
 </Navbar>
+
 
 <slot/>
 </div>
@@ -132,3 +134,4 @@
   flex-grow: 1;
 }
 </style>
+
