@@ -23,13 +23,15 @@
   import '../app.postcss'
 </script>
 
-<Navbar let:hidden let:toggle>
+<main class="wrapper">
+  <div class="top">
+<Navbar let:hidden let:toggle class="mb-12 bg-slate-100">
   <NavBrand href="/">
     <img src={Logo} alt="Gamedice Logo" />
   </NavBrand>
   <div class="flex items-center md:order-2">
     <DarkMode class="mr-5" />
-    <Avatar id="avatar-menu" src="/images/profile-picture-3.webp" />
+    <Avatar id="avatar-menu" src="" />
     <NavHamburger on:click={toggle} class1="w-full md:flex md:w-auto md:order-1" />
   </div>
   <Dropdown placement="bottom" triggeredBy="#avatar-menu">
@@ -57,7 +59,8 @@
   </NavUl>
 </Navbar>
 
-<slot />
+<slot/>
+</div>
 
 <Footer footerType="socialmedia">
   <div class="md:flex md:justify-between">
@@ -117,3 +120,15 @@
     </div>
   </div>
 </Footer>
+</main>
+
+<style>
+  .wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.top {
+  flex-grow: 1;
+}
+</style>
