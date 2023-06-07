@@ -23,7 +23,9 @@
   import '../app.postcss'
 </script>
 
-<Navbar let:hidden let:toggle class="mb-12">
+<main class="wrapper">
+  <div class="top">
+<Navbar let:hidden let:toggle class="mb-12 bg-slate-100">
   <NavBrand href="/">
     <img src={Logo} alt="Gamedice Logo" />
   </NavBrand>
@@ -57,7 +59,8 @@
   </NavUl>
 </Navbar>
 
-<slot />
+<slot/>
+</div>
 
 <Footer footerType="socialmedia">
   <div class="md:flex md:justify-between">
@@ -117,3 +120,15 @@
     </div>
   </div>
 </Footer>
+</main>
+
+<style>
+  .wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.top {
+  flex-grow: 1;
+}
+</style>

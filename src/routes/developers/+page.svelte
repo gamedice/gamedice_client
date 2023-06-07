@@ -37,7 +37,7 @@ catch(err){
   </div>
 </div>
 
-<div class=" flex flex-col mx-20 mt-6">
+<div class=" flex flex-col mx-20 mt-6 mb-12">
   {#each paginatedItems as developer}
   <div class="mb-6 flex">
     <a href="/developers/{developer.id}" class="flex flex-row items-center bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-900 dark:hover:bg-gray-700">
@@ -51,11 +51,13 @@ catch(err){
   {/each}
 </div>
 
-<DarkPaginationNav
-  totalItems={items.length}
-  {pageSize}
-  {currentPage}
-  limit={1}
-  showStepOptions={true}
-  on:setPage={(e) => (currentPage = e.detail.page)}
-/>
+<div class="bg-slate-100 dark:bg-gray-900">
+  <DarkPaginationNav
+    totalItems={items.length}
+    {pageSize}
+    {currentPage}
+    limit={1}
+    showStepOptions={true}
+    on:setPage={(e) => (currentPage = e.detail.page)}
+  />
+  </div>

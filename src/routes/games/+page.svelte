@@ -9,7 +9,7 @@
   const developers = data.developers
   const genres = data.genres
 
-  import {paginate, DarkPaginationNav} from 'svelte-paginate'
+  import {paginate, DarkPaginationNav, PaginationNav } from 'svelte-paginate'
   let items = games
   let currentPage = 1
   let pageSize = 5
@@ -204,7 +204,7 @@
     {/each}
   </div>
 </div>
-
+<div class="bg-slate-100 dark:bg-gray-900">
 <DarkPaginationNav
   totalItems={items.length}
   {pageSize}
@@ -213,3 +213,6 @@
   showStepOptions={true}
   on:setPage={(e) => (currentPage = e.detail.page)}
 />
+</div>
+
+

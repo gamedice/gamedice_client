@@ -14,7 +14,7 @@
 <h1 class="mx-20 text-5xl font-bold tracking-tight text-gray-900 dark:text-white">
   Анонсированные игры
 </h1>
-<div class=" flex flex-col grow mx-20 mt-12">
+<div class=" flex flex-col grow mx-20 my-12">
   {#each paginatedItems as anon}
     <div class="mb-6 flex">
       <div
@@ -49,11 +49,13 @@
   {/each}
 </div>
 
-<DarkPaginationNav
-  totalItems={items.length}
-  {pageSize}
-  {currentPage}
-  limit={1}
-  showStepOptions={true}
-  on:setPage={(e) => (currentPage = e.detail.page)}
-/>
+<div class="bg-slate-100 dark:bg-gray-900">
+  <DarkPaginationNav
+    totalItems={items.length}
+    {pageSize}
+    {currentPage}
+    limit={1}
+    showStepOptions={true}
+    on:setPage={(e) => (currentPage = e.detail.page)}
+  />
+  </div>

@@ -36,7 +36,7 @@ catch(err){
   </div>
 </div>
 
-<div class=" flex flex-col grow mx-20 mt-6">
+<div class=" flex flex-col grow mx-20 mt-6 mb-12">
   {#each paginatedItems as genre}
     <div class="mb-6 flex">
       <Card href="/genre/{genre.id}" size="xl" class="dark:bg-gray-900">
@@ -51,13 +51,13 @@ catch(err){
   {/each}
 </div>
 
-
-
-<DarkPaginationNav
-  totalItems={items.length}
-  {pageSize}
-  {currentPage}
-  limit={1}
-  showStepOptions={true}
-  on:setPage={(e) => (currentPage = e.detail.page)}
-/>
+<div class="bg-slate-100 dark:bg-gray-900">
+  <DarkPaginationNav
+    totalItems={items.length}
+    {pageSize}
+    {currentPage}
+    limit={1}
+    showStepOptions={true}
+    on:setPage={(e) => (currentPage = e.detail.page)}
+  />
+  </div>
