@@ -16,7 +16,7 @@
 
 </script>
 
-<div>
+<div class="mb-12">
   <div class="flex flex-row justify-between">
     <h1 class="ml-20 text-5xl font-bold tracking-tight text-gray-900 dark:text-white">
       {games.name}
@@ -28,8 +28,8 @@
     </a>
   </div>
   <div class="flex flex-row mx-20 mt-12">
-    <img src={games.photo} class="w-96 object-cover" />
-    <div>
+    <img src={games.photo} class="w-96 h-full object-cover float-left" />
+    <div class="flex flex-col">
        <a href="/genre/{genre.id}">
         <p class="description text-gray-700 dark:text-gray-400">
           <span class="font-bold dark:text-gray-100">Жанр: </span>{games.genre}
@@ -45,14 +45,14 @@
           .split('-')[2]
           .split('T')[0]}.{games.date_created.split('-')[1]}.{games.date_created.split('-')[0]}
       </p>
-        <div class="content-center description text-gray-700 dark:text-gray-400">
+      <div class="content-center description text-gray-700 dark:text-gray-400">
         <span class="font-bold dark:text-gray-100">Рейтинг:</span>
         <Rating total={10} rating={games.rating} size={30} class="mt-1.5 -ml-1.5">
           <p slot="text" class="ml-3 text-sm font-medium text-gray-500 dark:text-gray-400">{games.rating} из 10</p>
         </Rating>
-        </div>
+      </div>
 
-        <p class="description text-gray-700 dark:text-gray-400">
+      <p class="description text-gray-700 dark:text-gray-400">
         <span class="font-bold dark:text-gray-100">Количество игроков: </span>{games.count_player} млн.
       </p>
       <p class="description text-gray-700 dark:text-gray-400">

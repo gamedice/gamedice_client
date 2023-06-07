@@ -2,12 +2,12 @@
   export let data
 </script>
 
-<div>
+<div class="mb-12">
   <h1 class="mx-20 text-5xl font-bold tracking-tight text-gray-900 dark:text-white">
     {data.name}
   </h1>
   <div class="flex flex-row mx-20 mt-12">
-    <img src={data.photo} class="w-96 object-cover" />
+    <img src={data.photo} class="w-96 object-cover"/>
     <div>
       <p class="description text-gray-700 dark:text-gray-400">
         <span class="font-bold dark:text-gray-100">Жанр: </span>{data.genre}

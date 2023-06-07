@@ -50,6 +50,7 @@
     {/each}
   </div>
 
+  <div class="bg-slate-100 dark:bg-gray-900">
   <DarkPaginationNav
     totalItems={items.length}
     {pageSize}
@@ -58,4 +59,5 @@
     showStepOptions={true}
     on:setPage={(e) => (currentPage = e.detail.page)}
   />
+</div>
 {/if}

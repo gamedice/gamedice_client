@@ -94,7 +94,7 @@
 
 </script>
 
-<div class="flex mx-20 space-x-20">
+<div class="flex mx-20 space-x-20 mb-12">
   <aside>
 
     <div class="mb-8">

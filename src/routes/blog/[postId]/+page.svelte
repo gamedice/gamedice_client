@@ -14,7 +14,7 @@
     photo={posts.photo}
     title={posts.title}
     contain={posts.contain}
-    username={posts.user_string}
+    username={posts.username}
     date={posts.time_created.split('-')[2].split('T')[0]}
     month={posts.time_created.split('-')[1]}
     year={posts.time_created.split('-')[0]}
@@ -24,7 +24,7 @@
   {#each comms as comm}
     <div class="mb-7">
       <Card class="flex first:mt-7 m-auto dark:bg-gray-900 dark:border-gray-700" size="xl">
-        <h5 class="text-2xl tracking-tight text-gray-900 dark:text-white">{comm.user_name}</h5>
+        <h5 class="text-2xl tracking-tight text-gray-900 dark:text-white">{comm.username}</h5>
         <div class="text-sm">
           {comm.date.split('-')[2].split('T')[0]}.{comm.date.split('-')[1]}.{comm.date.split(
             '-',
