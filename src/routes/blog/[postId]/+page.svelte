@@ -23,7 +23,7 @@
 
   {#each comms as comm}
     <div class="mb-7">
-      <Card class="flex first:mt-7 m-auto" size="xl">
+      <Card class="flex first:mt-7 m-auto dark:bg-gray-900 dark:border-gray-700" size="xl">
         <h5 class="text-2xl tracking-tight text-gray-900 dark:text-white">{comm.user_name}</h5>
         <div class="text-sm">
           {comm.date.split('-')[2].split('T')[0]}.{comm.date.split('-')[1]}.{comm.date.split(
@@ -37,7 +37,7 @@
   {/each}
 
   <div class="mt-7">
-    <Card size="xl" class="m-auto">
+    <Card size="xl" class="m-auto dark:bg-gray-900 dark:border-gray-700">
       <form method="POST" action="?/new_comm" use:enhance>
         {#if !form?.message_success}
           {#if form?.missing_text}<p class="text-red-500">Обязательное поле</p>{/if}

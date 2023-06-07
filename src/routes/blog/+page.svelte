@@ -12,7 +12,7 @@
 
 {#if posts.length === 0}
   <div class="flex justify-center flex-wrap p-5 m-5">
-    <Card size="xl">
+    <Card size="xl" class="dark:bg-gray-900 dark:border-gray-700">
       <p class="font-normal text-gray-700 dark:text-gray-400 leading-tight">No posts yet.</p>
     </Card>
   </div>

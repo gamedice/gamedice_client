@@ -12,14 +12,14 @@
 
 {#if news.length === 0}
   <div class="flex justify-center flex-wrap p-5 m-5">
-    <Card size="xl">
+    <Card size="xl" class="dark:bg-gray-900 dark:border-gray-700">
       <p class="font-normal text-gray-700 dark:text-gray-400 leading-tight">No news yet.</p>
     </Card>
   </div>
 {:else}
   <div class="flex justify-center flex-wrap p-5 m-5">
     {#each paginatedItems as item}
-      <Card class="m-10">
+      <Card class="m-10 dark:bg-gray-900 dark:border-gray-700">
         <img src={item.photo} alt="itemPhoto" class="h-60 object-cover rounded-t-lg w-full mb-3" />
         <h5
           class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white whitespace-nowrap text-ellipsis overflow-hidden"

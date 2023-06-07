@@ -4,7 +4,7 @@
   import {enhance} from '$app/forms'
 </script>
 
-<Card size="xl" class="m-auto">
+<Card size="xl" class="m-auto dark:bg-gray-900 dark:border-gray-700">
   {#if !form?.message_success}
     <h1 class="mb-5 text-2xl font-bold tracking-tight text-gray-900 dark:text-white title_wrap">
       Добавить новый пост
