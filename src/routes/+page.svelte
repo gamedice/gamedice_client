@@ -1,3 +1,6 @@
+<svelte:head>
+   <title>Главная</title>
+</svelte:head>
 <script>
 </script>
 

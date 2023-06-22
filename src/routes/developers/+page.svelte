@@ -1,3 +1,6 @@
+<svelte:head>
+   <title>Разработчики</title>
+</svelte:head>
 <script>
   import {Input} from 'flowbite-svelte'
   export let data

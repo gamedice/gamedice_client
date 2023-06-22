@@ -1,3 +1,7 @@
+<svelte:head>
+   <title>{data.name}</title>
+</svelte:head>
+
 <script>
   export let data
 </script>
@@ -15,11 +19,13 @@
       <p class="description text-gray-700 dark:text-gray-400">
         <span class="font-bold dark:text-gray-100">Компания разработчик: </span>{data.company}
       </p>
-      <p class="description text-gray-700 dark:text-gray-400">
-        <span class="font-bold dark:text-gray-100">Дата выпуска: </span>{data.date_created
-          .split('-')[2]
-          .split('T')[0]}.{data.date_created.split('-')[1]}.{data.date_created.split('-')[0]}
-      </p>
+      {#if data.date_created != null }
+        <p class="description text-gray-700 dark:text-gray-400">
+          <span class="font-bold dark:text-gray-100">Дата выпуска: </span>{data.date_created
+            .split('-')[2]
+            .split('T')[0]}.{data.date_created.split('-')[1]}.{data.date_created.split('-')[0]}
+        </p>
+      {/if}
       <p class="description text-gray-700 dark:text-gray-400">
         <span class="font-bold dark:text-gray-100">Описание: </span><br />{data.subscribe}
       </p>

@@ -1,5 +1,5 @@
 <svelte:head>
-  <title>Блог Gamedice</title>
+   <title>Блог</title>
 </svelte:head>
 
 <script lang="ts">
