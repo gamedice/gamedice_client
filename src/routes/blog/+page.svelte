@@ -1,6 +1,7 @@
 <svelte:head>
    <title>Блог</title>
 </svelte:head>
+
 <script lang="ts">
   export let data
   const posts = data.posts
@@ -20,21 +21,21 @@
     </Card>
   </div>
 {:else}
-  <div class="flex justify-center flex-wrap p-5 m-5">
+  <div class="container_for_posts flex justify-center flex-wrap p-5 m-5">
     {#each paginatedItems as item}
       <Card class="m-10 dark:bg-gray-900 dark:border-gray-700">
-        <img src={item.photo} alt="itemPhoto" class="h-60 object-cover rounded-t-lg w-full mb-3" />
+        <img src={item.photo} alt="itemPhoto" class="post_photo_in_blog h-60 object-cover rounded-t-lg w-full mb-3" />
         <h5
-          class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white whitespace-nowrap text-ellipsis overflow-hidden"
+          class="post_title_in_blog mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white whitespace-nowrap text-ellipsis overflow-hidden"
         >
           {item.title}
         </h5>
         <p
-          class="h-40 mb-3 font-normal text-gray-700 dark:text-gray-400 leading-tight overflow-hidden text-justify"
+          class="post_contain_in_blog h-40 mb-3 font-normal text-gray-700 dark:text-gray-400 leading-tight overflow-hidden text-justify"
         >
           {item.contain}
         </p>
-        <Button color="light" href="/blog/{item.id}">
+        <Button color="light" class="button_to_blog_item" href="/blog/{item.id}">
           Подробнее <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"

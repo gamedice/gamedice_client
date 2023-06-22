@@ -12,10 +12,10 @@
 </script>
 
 <Card img={photo} size="xl" class="m-auto dark:bg-gray-900 dark:border-gray-700">
-  <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+  <h5 class="title_item mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
     {title}
   </h5>
-  <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 leading-tight whitespace-pre-wrap">
+  <p class="contain_item mb-3 font-normal text-gray-700 dark:text-gray-400 leading-tight whitespace-pre-wrap">
     {contain}
   </p>
 
