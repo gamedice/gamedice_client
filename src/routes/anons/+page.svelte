@@ -1,3 +1,6 @@
+<svelte:head>
+   <title>Анонс</title>
+</svelte:head>
 <script>
   import {Button} from 'flowbite-svelte'
 

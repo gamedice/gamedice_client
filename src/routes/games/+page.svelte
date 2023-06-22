@@ -1,3 +1,7 @@
+<svelte:head>
+   <title>Каталог</title>
+</svelte:head>
+
 <script>
   import {Checkbox, Label, Input, Search, Button} from 'flowbite-svelte'
 
@@ -100,7 +104,7 @@
     <div class="mb-8">
       <Label for="game-input" class="block mb-2">Название игры</Label>
       <Search size="md" placeholder="" id="game-input" bind:value={name}>
-        <Button size="sm" class="font-thin" on:click={getData}>Найти</Button>
+        <Button size="sm" class="text-gray-700 dark:text-gray-400 font-thin" color="" id="game-button" on:click={getData}>Найти</Button>
       </Search>
     </div>
 
@@ -158,7 +162,7 @@
 
     </div>
     <div class="flex justify-center mb-12">
-      <Button on:click={getValue} color="green" class="mt-3 mb-72 grow">
+      <Button on:click={getValue} color="green" class="mt-3 mb-72 grow button-apply">
         Применить
       </Button>
     </div>
@@ -166,24 +170,24 @@
 
   </aside>
 
-  <div class=" flex flex-col w-9/12 ">
+  <div class=" flex flex-col w-9/12 card">
     {#each paginatedItems as game}
       <div class="mb-6 flex">
         <div class="flex flex-row items-center bg-white border border-gray-200 rounded-lg shadow dark:border-gray-700 dark:bg-gray-900">
           <img class="w-52 object-cover rounded-t-lg h-full" src={game.photo} alt="обложка игры" />
           <div class="flex flex-col justify-between p-4 leading-normal">
-            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white game-card-name">
               {game.name}
             </h5>
             <p class="mb-1 font-normal text-gray-700 dark:text-gray-400 text-justify ">
               {game.subscribe.substr(0, 300).concat('...')}
             </p>
             <div class="flex flex-row mb-3">
-            <p class="mr-3 text-gray-700 dark:text-gray-400 text-justify ">| Жанр: {game.genre} |</p>
-            <p class="mx-3 text-gray-700 dark:text-gray-400 text-justify ">| Рейтинг: {game.rating} |</p>
-            <p class="mx-3 text-gray-700 dark:text-gray-400 text-justify ">| Разработчик: {game.company} |</p>
+            <p class="mr-3 text-gray-700 dark:text-gray-400 text-justify">| Жанр: <span class="game-card-genre">{game.genre}</span> |</p>
+            <p class="mx-3 text-gray-700 dark:text-gray-400 text-justify">| Рейтинг: <span class="game-card-rating">{game.rating}</span> |</p>
+            <p class="mx-3 text-gray-700 dark:text-gray-400 text-justify">| Разработчик: <span class="game-card-company">{game.company}</span> |</p>
             </div>
-            <Button href="/games/{game.id}" color="light" class="w-40">
+            <Button href="/games/{game.id}" color="light" class="w-40 button-read">
               Читать <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"

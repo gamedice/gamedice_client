@@ -1,3 +1,6 @@
+<svelte:head>
+   <title>{genre.name}</title>
+</svelte:head>
 <script>
   import { Button } from 'flowbite-svelte'
 

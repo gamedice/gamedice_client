@@ -1,3 +1,6 @@
+<svelte:head>
+   <title>Новости</title>
+</svelte:head>
 <script lang="ts">
   export let data
   const news = data.news

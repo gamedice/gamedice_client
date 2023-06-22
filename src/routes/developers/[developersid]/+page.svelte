@@ -1,3 +1,6 @@
+<svelte:head>
+   <title>{data.name}</title>
+</svelte:head>
 <script>
   export let data
 </script>

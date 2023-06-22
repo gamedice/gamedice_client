@@ -1,8 +1,9 @@
 import type { PageLoad } from './$types';
 import { error } from '@sveltejs/kit';
+import { PUBLIC_URL } from '$env/static/public';
 export const load: PageLoad = async ({ fetch, params })  => {
-  const response = await fetch(`http://127.0.0.1:8000/catalog/genre/${params.genreid}/`)
-  const response_game = await fetch('http://127.0.0.1:8000/catalog/game/')
+  const response = await fetch(`${PUBLIC_URL}/catalog/genre/${params.genreid}/`)
+  const response_game = await fetch(`${PUBLIC_URL}/catalog/game/`)
   if (response.ok && response_game.ok){
     const genres = await response.json()
     const games = await response_game.json()

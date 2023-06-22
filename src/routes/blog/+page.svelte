@@ -1,3 +1,6 @@
+<svelte:head>
+   <title>Блог</title>
+</svelte:head>
 <script lang="ts">
   export let data
   const posts = data.posts

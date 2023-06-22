@@ -1,3 +1,6 @@
+<svelte:head>
+   <title>Случайная игра</title>
+</svelte:head>
 <script>
   import {Button} from 'flowbite-svelte'
 

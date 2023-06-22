@@ -1,3 +1,6 @@
+<svelte:head>
+   <title>Жанры</title>
+</svelte:head>
 <script>
   import {Card, Input} from 'flowbite-svelte'
   export let data

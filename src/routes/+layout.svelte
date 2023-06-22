@@ -27,7 +27,7 @@
 <main class="wrapper">
   <div class="top">
 <Navbar let:hidden let:toggle class="mb-12 bg-slate-100">
-  <NavBrand href="/">
+  <NavBrand href="/" class="navigation_image">
     <img src={Logo} alt="Gamedice Logo" />
   </NavBrand>
   <div class="flex items-center md:order-2">
@@ -47,15 +47,15 @@
     <DropdownItem>Sign out</DropdownItem>
   </Dropdown>
   <NavUl {hidden}>
-    <NavLi id="nav-menu1"><Chevron aligned>Игры</Chevron></NavLi>
-    <NavLi href="/news">Новости</NavLi>
-    <NavLi href="/blog">Блог</NavLi>
-    <NavLi href="/random-game">Случайная игра</NavLi>
-    <Dropdown triggeredBy="#nav-menu1" class="w-44 z-20">
-      <DropdownItem href="/games">Каталог</DropdownItem>
-      <DropdownItem href="/anons">Анонс</DropdownItem>
-      <DropdownItem href="/developers">Разработчики</DropdownItem>
-      <DropdownItem href="/genre">Жанры</DropdownItem>
+    <NavLi id="nav-menu1" class="navigation_panel"><Chevron aligned>Игры</Chevron></NavLi>
+    <NavLi class="navigation_panel" href="/news">Новости</NavLi>
+    <NavLi class="navigation_panel" href="/blog">Блог</NavLi>
+    <NavLi class="navigation_panel" href="/random-game">Случайная игра</NavLi>
+    <Dropdown triggeredBy="#nav-menu1" class="w-44 z-20 navigation_hidden">
+      <DropdownItem class="nest_link" href="/games" id="catalog">Каталог</DropdownItem>
+      <DropdownItem class="nest_link" href="/anons" id="anons">Анонс</DropdownItem>
+      <DropdownItem class="nest_link" href="/developers" id="developers">Разработчики</DropdownItem>
+      <DropdownItem class="nest_link" href="/genre" id="genre">Жанры</DropdownItem>
     </Dropdown>
   </NavUl>
 </Navbar>
