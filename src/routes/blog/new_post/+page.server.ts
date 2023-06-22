@@ -1,5 +1,7 @@
 import {fail} from '@sveltejs/kit'
 
+import { PUBLIC_URL } from "$env/static/public"
+
 export const actions = {
   new_post: async ({request}) => {
     const formData = await request.formData()
@@ -33,11 +35,11 @@ export const actions = {
       data.append('photo', photo)
       data.append('is_published', is_published)
 
-      const response = await fetch('http://127.0.0.1:8000/blog/', {
+      const response = await fetch(`${PUBLIC_URL}/blog/`, {
         method: 'POST',
         body: data,
       })
-      if (response.ok) {
+      if (response.status==200 || response.status==201) {
         return {message_success: true}
       } else {
         return {message_error: response.status}

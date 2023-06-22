@@ -1,10 +1,14 @@
+<svelte:head>
+  <title>Новости</title>
+</svelte:head>
+
 <script lang="ts">
   export let data
   const news = data.news
 
   let items = news
   let currentPage = 1
-  let pageSize = 9
+  let pageSize = 6
   $: paginatedItems = paginate({items, pageSize, currentPage})
   import {paginate, DarkPaginationNav} from 'svelte-paginate'
   import {Card, Button} from 'flowbite-svelte'
@@ -17,12 +21,12 @@
     </Card>
   </div>
 {:else}
-  <div class="flex justify-center flex-wrap p-5 m-5">
+  <div class="container_for_news flex justify-center flex-wrap p-5 m-5">
     {#each paginatedItems as item}
-      <Card class="m-10 dark:bg-gray-900 dark:border-gray-700">
+      <Card class="one_card m-10 dark:bg-gray-900 dark:border-gray-700">
         <img src={item.photo} alt="itemPhoto" class="h-60 object-cover rounded-t-lg w-full mb-3" />
         <h5
-          class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white whitespace-nowrap text-ellipsis overflow-hidden"
+          class="title_card_news mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white whitespace-nowrap text-ellipsis overflow-hidden"
         >
           {item.title}
         </h5>
@@ -31,7 +35,7 @@
         >
           {item.contain}
         </p>
-        <Button color="light" href="/news/{item.id}">
+        <Button color="light" href="/news/{item.id}" class="button_to_news_item">
           Подробнее <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -49,6 +53,8 @@
       </Card>
     {/each}
   </div>
+
+  <p hidden class="current_page">page {currentPage}</p>
 
   <div class="bg-slate-100 dark:bg-gray-900">
   <DarkPaginationNav

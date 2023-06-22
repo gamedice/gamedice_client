@@ -2,9 +2,11 @@ import type {PageLoad} from './$types'
 
 import {error} from '@sveltejs/kit'
 
+import { PUBLIC_URL } from "$env/static/public"
+
 export const load: PageLoad = async ({fetch, params}) => {
-  const response_posts = await fetch(`http://127.0.0.1:8000/blog/${params.postId}/`)
-  const response_comm = await fetch(`http://127.0.0.1:8000/blog/${params.postId}/comments/`)
+  const response_posts = await fetch(`${PUBLIC_URL}/blog/${params.postId}/`)
+  const response_comm = await fetch(`${PUBLIC_URL}/blog/${params.postId}/comments/`)
   if (response_posts.ok && response_comm.ok) {
     const posts = await response_posts.json()
     const comms = await response_comm.json()

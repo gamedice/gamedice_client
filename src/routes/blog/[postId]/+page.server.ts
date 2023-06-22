@@ -1,5 +1,7 @@
 import {fail} from '@sveltejs/kit'
 
+import { PUBLIC_URL } from "$env/static/public"
+
 export const actions = {
   new_comm: async ({request, params}) => {
     const formData = await request.formData()
@@ -16,7 +18,7 @@ export const actions = {
     }
 
     if (text && user) {
-      await fetch(`http://127.0.0.1:8000/blog/${params.postId}/comments/`, {
+      const response = await fetch(`${PUBLIC_URL}/blog/${params.postId}/comments/`, {
         method: 'POST',
         body: JSON.stringify({
           text,
@@ -27,8 +29,11 @@ export const actions = {
           'Content-type': 'application/json',
         },
       })
-
-      return {message_success: true}
+      if (response.status==200 || response.status==201) {
+        return {message_success: true}
+      } else {
+        return {message_error: response.status}
+      }
     }
   },
 }
