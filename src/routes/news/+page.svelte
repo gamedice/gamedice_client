@@ -52,11 +52,11 @@
         </Button>
       </Card>
     {/each}
-
   </div>
 
   <p hidden class="current_page">page {currentPage}</p>
 
+  <div class="bg-slate-100 dark:bg-gray-900">
   <DarkPaginationNav
     totalItems={items.length}
     {pageSize}
@@ -65,4 +65,5 @@
     showStepOptions={true}
     on:setPage={(e) => (currentPage = e.detail.page)}
   />
+</div>
 {/if}

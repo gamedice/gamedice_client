@@ -2,7 +2,7 @@
   export let data
 </script>
 
-<div>
+<div class="mb-12">
   <h1 class="mx-20 text-5xl font-bold tracking-tight text-gray-900 dark:text-white">
     {data.name}
   </h1>

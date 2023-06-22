@@ -21,7 +21,7 @@
     photo={posts.photo}
     title={posts.title}
     contain={posts.contain}
-    username={posts.user_string}
+    username={posts.username}
     date={posts.time_created.split('-')[2].split('T')[0]}
     month={posts.time_created.split('-')[1]}
     year={posts.time_created.split('-')[0]}
