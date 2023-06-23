@@ -1,4 +1,5 @@
 <script>
+  import { page } from '$app/stores';
   import {
     Footer,
     FooterBrand,
@@ -21,6 +22,8 @@
   } from 'flowbite-svelte'
   import '../app.postcss'
   import Logo from '../assets/Logo.svg'
+  export let data;
+  const me = data.user?.me
 </script>
 
 
@@ -36,15 +39,22 @@
     <NavHamburger on:click={toggle} class1="w-full md:flex md:w-auto md:order-1" />
   </div>
   <Dropdown placement="bottom" triggeredBy="#avatar-menu">
-    <DropdownHeader>
-      <span class="block text-sm"> Bonnie Green </span>
-      <span class="block truncate text-sm font-medium"> name@flowbite.com </span>
-    </DropdownHeader>
-    <DropdownItem>Dashboard</DropdownItem>
-    <DropdownItem>Settings</DropdownItem>
-    <DropdownItem>Earnings</DropdownItem>
-    <DropdownDivider />
-    <DropdownItem>Sign out</DropdownItem>
+    {#if $page.data.is_authenticated}
+  <DropdownHeader>
+      <span class="block text-sm"> <h1>{me.username}</h1>  </span>
+      <span class="block truncate text-sm font-medium"> {me.email} </span>
+  </DropdownHeader>
+  <DropdownItem href="/profile">Аккаунт</DropdownItem>
+  <DropdownItem>Выйти из аккаунта</DropdownItem>
+
+  {:else}
+  <DropdownItem href="/login">Войти</DropdownItem>
+  <DropdownItem href="/signup">Зарегистрироваться</DropdownItem>
+  {/if}
+
+  <!-- <DropdownItem>Избранное</DropdownItem> -->
+  <!-- <DropdownItem>Earnings</DropdownItem> -->
+  <DropdownDivider />
   </Dropdown>
   <NavUl {hidden}>
     <NavLi id="nav-menu1" class="navigation_panel"><Chevron aligned>Игры</Chevron></NavLi>
