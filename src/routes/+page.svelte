@@ -58,7 +58,7 @@
    <!-- Блог с анонсами -->
 
    <div class="flex flex-col p-5 ">      
-     <a class="font-bold text-2xl"  href="/anons">Свежие анонсы > </a>
+     <a class="font-bold text-2xl"  href="/anons">Свежие анонсы</a>
    </div>
 
    <div class="flex flex-row p-5 m-5">

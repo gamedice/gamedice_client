@@ -10,5 +10,7 @@ export const getUser = async (value) => {
     })
     const me = await response_me.json()
     .catch(err => console.error(err))
+    const user_id = me.id
+    process.env.MY_VALUE = user_id
     return {me}
 }

@@ -1,14 +1,15 @@
-import {fail} from '@sveltejs/kit'
-
 import { PUBLIC_URL } from "$env/static/public"
 
+import { fail } from '@sveltejs/kit'
+import { redirect } from '@sveltejs/kit'
+
 export const actions = {
-  new_post: async ({request}) => {
+  patch_post: async ({request, params}) => {
+    let user_id = process.env.MY_VALUE
+
     const formData = await request.formData()
     const title = formData.get('title')
     const contain = formData.get('contain')
-    const user = formData.get('user')
-    const photo = formData.get('photo')
     let is_published = formData.get('is_published')
 
     if (is_published == 'on') {
@@ -23,24 +24,19 @@ export const actions = {
     if (!contain) {
       return fail(400, {missing_contain: true})
     }
-    if (!user) {
-      return fail(400, {missing_user: true})
-    }
 
-    if (title && contain && user) {
+    if (title && contain) {
       const data = new FormData()
       data.append('title', title)
       data.append('contain', contain)
-      data.append('user', user)
-      data.append('photo', photo)
       data.append('is_published', is_published)
 
-      const response = await fetch(`${PUBLIC_URL}/blog/`, {
-        method: 'POST',
+      const response = await fetch(`${PUBLIC_URL}/blog/users_post/${user_id}/${params.user_postId}`, {
+        method: 'PATCH',
         body: data,
       })
       if (response.status==200 || response.status==201) {
-        if (is_published == true) {
+        if (is_published === true) {
           return {message_success_publish: true, message_success: true}
         } else { 
           return {message_success_publish: false, message_success: true}
@@ -50,4 +46,13 @@ export const actions = {
       }
     }
   },
+
+  delete_post: async (event) => {
+    let user_id = process.env.MY_VALUE
+    console.log(event)
+    await fetch(`${PUBLIC_URL}/blog/users_post/${user_id}/${event.params.user_postId}`,{
+        method:  'DELETE'
+      })
+      throw redirect(302, '/blog/users_post')
+  }
 }

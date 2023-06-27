@@ -6,7 +6,7 @@ import type { LayoutServerLoad } from "./$types";
 export const load = (async ({cookies,locals}) => {
   const access_token = cookies.get('access_token')
   let user 
-  console.log("USER", access_token)
+  // console.log("USER", access_token)
 
   try {
     if (access_token){

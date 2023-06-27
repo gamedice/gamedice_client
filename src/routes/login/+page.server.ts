@@ -8,8 +8,6 @@ export const actions = {
         const formData = await request.formData()
         const username = formData.get("username")
         const password = formData.get("password")
-        console.log(...formData)
-
         
           if (!username) {
             return fail(400, {missing_email: true})
@@ -41,8 +39,7 @@ export const actions = {
                 // console.log(res)
                 const value = res.access
                 const refresh = res.refresh
-                process.env.MY_VALUE = value;
-                  cookies.set('access_token' , value, {statusbar: 307, path:'/', maxAge: 3600})
+                  cookies.set('access_token' , value, {statusbar: 307, path:'/', maxAge: 100600})
                   // cookies.set('refresh_token' , refresh, {statusbar: 307, path:'/', maxAge: 3600})
 
                 throw redirect(307,'/')

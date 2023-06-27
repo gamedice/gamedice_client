@@ -1,24 +1,24 @@
 <svelte:head>
-   <title>Блог</title>
+   <title>Блог {current_user.username}</title>
 </svelte:head>
 
 <script lang="ts">
-  import { paginate, DarkPaginationNav } from 'svelte-paginate'
-  import { Card, Button } from 'flowbite-svelte'
-  
-  export let data
-  const posts = data.posts
+    export let data
+    let users_posts = data.users_posts
+    const current_user = data.user?.me
 
-  let items = posts
-  let currentPage = 1
-  let pageSize = 9
-  $: paginatedItems = paginate({items, pageSize, currentPage})
+    let items = users_posts
+    let currentPage = 1
+    let pageSize = 9
+    $: paginatedItems = paginate({items, pageSize, currentPage})
+    import {paginate, DarkPaginationNav} from 'svelte-paginate'
+    import {Card, Button} from 'flowbite-svelte'
 </script>
 
-{#if posts.length === 0}
+{#if users_posts.length === 0}
   <div class="flex justify-center flex-wrap p-5 m-5">
     <Card size="xl" class="dark:bg-gray-900 dark:border-gray-700">
-      <p class="font-normal text-gray-700 dark:text-gray-400 leading-tight">No posts yet.</p>
+      <p class="font-normal text-gray-700 dark:text-gray-400 leading-tight">No {current_user.username}'s posts yet.</p>
     </Card>
   </div>
 {:else}
@@ -32,7 +32,7 @@
         <p class="post_contain_in_blog h-40 mb-3 font-normal text-gray-700 dark:text-gray-400 leading-tight overflow-hidden text-justify">
           {item.contain}
         </p>
-        <Button color="light" class="button_to_blog_item" href="/blog/{item.id}">
+        <Button color="light" class="button_to_blog_item" href="/blog/users_post/{item.id}">
           Подробнее <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -51,6 +51,7 @@
     {currentPage}
     limit={1}
     showStepOptions={true}
-    on:setPage={(e) => (currentPage = e.detail.page)}/>
+    on:setPage={(e) => (currentPage = e.detail.page)}
+  />
 </div>
 {/if}

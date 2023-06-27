@@ -45,6 +45,8 @@
       <span class="block truncate text-sm font-medium"> {me.email} </span>
   </DropdownHeader>
   <DropdownItem href="/profile">Аккаунт</DropdownItem>
+  <DropdownItem href="/blog/new_post">Новый пост</DropdownItem>
+  <DropdownItem href="/blog/users_post">Мои посты</DropdownItem>
   <DropdownItem>Выйти из аккаунта</DropdownItem>
 
   {:else}
@@ -71,7 +73,7 @@
 </Navbar>
 
 
-<slot/>
+<slot class="background"/>
 </div>
 
 <Footer footerType="socialmedia">
@@ -135,13 +137,21 @@
 </main>
 
 <style>
+  .background {
+      background-image: url("../assets/background.svg");
+      background-repeat: no-repeat; 
+      background-size:90%;
+      right: 0;
+  }
+
   .wrapper {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-.top {
-  flex-grow: 1;
-}
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  .top {
+    flex-grow: 1;
+  }
 </style>
 
