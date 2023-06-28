@@ -7,7 +7,7 @@
   const current_user = data.user?.me
 </script>
 
-<Card size="xl" class="m-auto dark:bg-gray-900 dark:border-gray-700">
+<Card size="xl" class="m-auto dark:bg-gray-900 dark:border-gray-700 max-xl:m-4">
   {#if !form?.message_success}
     <h1 class="mb-5 text-2xl font-bold tracking-tight text-gray-900 dark:text-white title_wrap">
       Добавить новый пост

@@ -25,16 +25,16 @@
    <div class="background">
      
 
-     <div>
+     <div class="container">
        <img src = {Mainphoto} class = "photo0"/>
        <img id = "rotate" class = "photo1" src = {gamepad} />
        <img  id = "pendulum1" class = "joystick" src = {joystick} />
        <img id = "pendulum2" class = "console" src = {console} />
        <img id = "rotate" class = "glasses" src = {glasses} />
-       <img id = "mario"class = "light:color-black-800"  src = {mario} />
+       
 
      </div>
-
+     <img id = "mario"class = "light:color-black-800"  src = {mario} />
    <!-- Блог с новостями -->
    <div>
      <div class="flex flex-col p-5 m-auto">    
@@ -157,7 +157,11 @@ a{
        transform: scale(1) rotate(360deg);
    }
 }
-
+.container{
+  position: relative;
+  margin: auto;
+  
+}
 .photo0{
  position: relative;
  margin-left: auto;
@@ -165,38 +169,161 @@ a{
  z-index: 1;
 }
 
-.photo1{
- position: absolute;
- margin-left: 45vh;
- top: 60vh;
- z-index: 2;
-}
-.glasses{
- position: absolute;
- margin-left: 120vh;
- top: 20vh;
- z-index: 2;
-}
-.console{
- position: absolute;
- margin-left: 127vh;
- margin-bottom: 0vh;
- top: 43.5vh;
- z-index: 2;
-}
-.joystick{
- position: absolute;
- margin-left: 45vh;
- top: 15vh;
- z-index: 2;
-}
+
 
 #mario{
  position: absolute;
  right: 0;
  top: 40vh;
- z-index: 2;
+ z-index: -1;
  color: black;
 }
 
+@media (min-width: 640px) { 
+  .photo1{
+ position: absolute;
+ left: 1px;
+ top: 250px;
+ z-index: 2;
+ width: 25%;
+}
+.glasses{
+ position: absolute;
+ left: 460px;
+ top: 10px;
+ z-index: 2;
+ width: 21%;
+}
+.console{
+ position: absolute;
+ left: 520px;
+ top: 170px;
+ z-index: 2;
+ width: 24%;
+}
+.joystick{
+ position: absolute;
+ left: 1px;
+ top: -25px;
+ z-index: 2;
+ width: 27%;
+}
+ }
+@media (min-width: 768px) {
+  .photo1{
+ position: absolute;
+ left: 1px;
+ top: 300px;
+ z-index: 2;
+ width: 25%;
+}
+.glasses{
+ position: absolute;
+ left: 560px;
+ top: 15px;
+ z-index: 2;
+ width: 21%;
+}
+.console{
+ position: absolute;
+ left: 610px;
+ top: 195px;
+ z-index: 2;
+ width: 25%;
+}
+.joystick{
+ position: absolute;
+ left: 1px;
+ top: -30px;
+ z-index: 2;
+ width: 27%;
+}
+ }
+@media (min-width: 1024px) { 
+  .photo1{
+ position: absolute;
+ left: 10px;
+ top: 400px;
+ z-index: 2;
+}
+.glasses{
+ position: absolute;
+ left: 750px;
+ top: 15px;
+ z-index: 2;
+}
+.console{
+ position: absolute;
+ left: 800px;
+ top: 250px;
+ z-index: 2;
+}
+.joystick{
+ position: absolute;
+ left: 30px;
+ top: -20px;
+ z-index: 2;
+}
+ }
+@media (min-width: 1280px) { 
+  .photo1{
+ position: absolute;
+ left: 150px;
+ top: 400px;
+ z-index: 2;
+ width: 20%;
+}
+.glasses{
+ position: absolute;
+ left: 850px;
+ top: 15px;
+ z-index: 2;
+ width: 17%;
+}
+.console{
+ position: absolute;
+ left: 925px;
+ top: 250px;
+ z-index: 2;
+ width: 20%;
+}
+.joystick{
+ position: absolute;
+ left: 150px;
+ top: -20px;
+ z-index: 2;
+ width: 20%;
+}
+}
+
+@media (min-width: 1536px) { 
+  .photo1{
+ position: absolute;
+ left: 270px;
+ top: 400px;
+ z-index: 2;
+ width: 16%;
+}
+.glasses{
+ position: absolute;
+ left: 1000px;
+ top: 15px;
+ z-index: 2;
+ width: 13%;
+}
+.console{
+ position: absolute;
+ left: 1070px;
+ top: 250px;
+ z-index: 2;
+ width: 16%;
+}
+.joystick{
+ position: absolute;
+ left: 250px;
+ top: -45px;
+ z-index: 2;
+ width: 18%;
+}
+ }
 </style>

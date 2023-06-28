@@ -11,7 +11,7 @@
   export let time:String
 </script>
 
-<Card img={photo} size="xl" class="m-auto dark:bg-gray-900 dark:border-gray-700">
+<Card img={photo} size="xl" class="m-auto dark:bg-gray-900 dark:border-gray-700 max-xl:m-4">
   <h5 class="title_item mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
     {title}
   </h5>

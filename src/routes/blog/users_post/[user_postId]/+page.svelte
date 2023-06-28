@@ -23,7 +23,7 @@
     is_published={users_post.is_published}/>
 </div>
 
-<Card size="xl" class="m-auto dark:bg-gray-900 dark:border-gray-700 mt-4">
+<Card size="xl" class="m-auto dark:bg-gray-900 dark:border-gray-700 mt-4 max-xl:m-4">
   <Button href="/blog/users_post/{users_post.id}/edit" color="light">Редактировать</Button>
 </Card>
 

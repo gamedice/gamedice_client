@@ -21,7 +21,7 @@
   {#each paginatedItems as anon}
     <div class="mb-6 flex">
       <div
-        class="flex flex-row items-center bg-white border border-gray-200 rounded-lg shadow dark:border-gray-700 dark:bg-gray-800"
+        class="flex flex-row grow items-center bg-white border border-gray-200 rounded-lg shadow dark:border-gray-700 dark:bg-gray-800"
       >
         <img class="w-52 object-cover rounded-t-lg h-full" src={anon.photo} alt="обложка игры" />
         <div class="flex flex-col justify-between p-4 leading-normal">

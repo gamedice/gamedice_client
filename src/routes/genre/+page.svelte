@@ -42,7 +42,7 @@ catch(err){
 <div class=" flex flex-col grow mx-20 mt-6 mb-12">
   {#each paginatedItems as genre}
     <div class="mb-6 flex">
-      <Card href="/genre/{genre.id}" size="xl" class="dark:bg-gray-900">
+      <Card href="/genre/{genre.id}" size="xl" class="dark:bg-gray-900 grow">
         <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
           {genre.name}
         </h5>

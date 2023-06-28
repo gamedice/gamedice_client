@@ -170,10 +170,10 @@
 
   </aside>
 
-  <div class=" flex flex-col w-9/12 card">
+  <div class=" flex flex-col w-9/12 card ">
     {#each paginatedItems as game}
       <div class="mb-6 flex">
-        <div class="flex flex-row items-center bg-white border border-gray-200 rounded-lg shadow dark:border-gray-700 dark:bg-gray-900">
+        <div class="flex flex-row grow items-center bg-white border border-gray-200 rounded-lg shadow dark:border-gray-700 dark:bg-gray-900">
           <img class="w-52 object-cover rounded-t-lg h-full" src={game.photo} alt="обложка игры" />
           <div class="flex flex-col justify-between p-4 leading-normal">
             <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white game-card-name">

@@ -43,7 +43,7 @@ catch(err){
 <div class=" flex flex-col mx-20 mt-6 mb-12">
   {#each paginatedItems as developer}
   <div class="mb-6 flex">
-    <a href="/developers/{developer.id}" class="flex flex-row items-center bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-900 dark:hover:bg-gray-700">
+    <a href="/developers/{developer.id}" class="flex flex-row grow items-center bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-900 dark:hover:bg-gray-700">
       <img class="w-52 object-cover rounded-t-lg h-full" src="{developer.logo}" alt="лого компании">
       <div class="flex flex-col justify-between p-4 leading-normal" >
           <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{developer.name}</h5>

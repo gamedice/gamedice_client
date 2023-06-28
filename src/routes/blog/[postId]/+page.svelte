@@ -43,7 +43,7 @@
 
   {#if is_authenticated}
   <div class="mt-7">
-    <Card size="xl" class="m-auto dark:bg-gray-900 dark:border-gray-700">
+    <Card size="xl" class="m-auto dark:bg-gray-900 dark:border-gray-700 max-xl:m-4">
       <form method="POST" action="?/new_comm" use:enhance>
       {#if form?.message_error}<p class="text-red-500">
           Форма заполнена некорректно: ошибка {form.message_error}
